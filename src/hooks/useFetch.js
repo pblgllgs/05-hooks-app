@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export const useFetch = (url) => {
     const [state, setState] = useState({
@@ -7,22 +7,34 @@ export const useFetch = (url) => {
         error: null,
     });
 
-    useEffect(() => {
+    const estaMontado = useRef(true);
 
+    useEffect(() => {
+        return () => {
+            estaMontado.current = false;
+        };
+    }, []);
+
+    useEffect(() => {
         setState({
             data: null,
             loading: true,
             error: null,
-        })
-
+        });
         fetch(url)
             .then((resp) => resp.json())
             .then((data) => {
-                setState({
-                    loading: false,
-                    error: null,
-                    data
-                });
+                setTimeout(() => {
+                    if (estaMontado.current) {
+                        setState({
+                            loading: false,
+                            error: null,
+                            data,
+                        });
+                    }else{
+                        console.log('No se llamó')
+                    }
+                }, 4000);
             });
     }, [url]);
 
