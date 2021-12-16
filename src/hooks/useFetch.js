@@ -8,13 +8,20 @@ export const useFetch = (url) => {
     });
 
     useEffect(() => {
-        fetch("https://www.breakingbadapi.com/api/quotes/1")
+
+        setState({
+            data: null,
+            loading: true,
+            error: null,
+        })
+
+        fetch(url)
             .then((resp) => resp.json())
             .then((data) => {
                 setState({
                     loading: false,
                     error: null,
-                    data,
+                    data
                 });
             });
     }, [url]);
