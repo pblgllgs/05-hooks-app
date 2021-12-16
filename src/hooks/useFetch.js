@@ -24,17 +24,11 @@ export const useFetch = (url) => {
         fetch(url)
             .then((resp) => resp.json())
             .then((data) => {
-                setTimeout(() => {
-                    if (estaMontado.current) {
-                        setState({
-                            loading: false,
-                            error: null,
-                            data,
-                        });
-                    }else{
-                        console.log('No se llamó')
-                    }
-                }, 4000);
+                setState({
+                    loading: false,
+                    error: null,
+                    data,
+                });
             });
     }, [url]);
 
