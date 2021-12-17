@@ -3,7 +3,7 @@ version: "3.8"
 services:
   app:
     container_name: app-dev
-    image: pblgllgs/reactdocker
+    image: reactdocker
     build:
       context: .
       target: build

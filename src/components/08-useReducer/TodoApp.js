@@ -45,7 +45,7 @@ export const TodoApp = () => {
 
     return (
         <div>
-            <h1>TodoApp ({todos.length})</h1>
+            <h1>TodoApp ({todos.length}) items</h1>
             <hr />
             <div className="row">
                 <div className="col-7">
