@@ -1,4 +1,4 @@
-import { renderHook, act } from "@testing-library/react-hooks";
+import { renderHook } from "@testing-library/react-hooks";
 import { useFetch } from "../../hooks/useFetch";
 
 describe("Pruebas sobre useFetch", () => {
@@ -21,7 +21,7 @@ describe("Pruebas sobre useFetch", () => {
         expect(data.length).toBe(1);
         expect(loading).toBe(false);
         expect(error).toBe(null);
-    });
+    },3000);
 
     test("debe de manejar el error", async () => {
         const { result, waitForNextUpdate } = renderHook(() =>
