@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 export const useFetch = (url) => {
+
     const [state, setState] = useState({
         data: null,
         loading: true,
@@ -24,12 +25,21 @@ export const useFetch = (url) => {
         fetch(url)
             .then((resp) => resp.json())
             .then((data) => {
+                if(estaMontado.current){
+                    setState({
+                        loading: false,
+                        error: null,
+                        data,
+                    });
+                }
+            })
+            .catch(()=> {
                 setState({
+                    data: null,
                     loading: false,
-                    error: null,
-                    data,
-                });
-            });
+                    error:'No se pudo cargar!!'
+                })
+            })
     }, [url]);
 
     return state;
