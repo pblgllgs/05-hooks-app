@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Pruebas sobre HooksApp Debe de mostrar correctamente 1`] = `
-<Fragment>
+exports[`Pruebas sobre <HooksApp /> Debe de mostrar correctamente 1`] = `
+<div>
   <h1>
     Hola mundo
   </h1>
-</Fragment>
+</div>
 `;
