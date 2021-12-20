@@ -4,6 +4,7 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
+    Redirect,
 } from "react-router-dom";
 import { AboutScreen } from './AboutScreen';
 import { HomeScreen } from './HomeScreen';
@@ -12,16 +13,18 @@ import { NavBar } from './NavBar';
 
 export const AppRouter = () => {
     return (
-        <div>
-            <Router>
+        <Router>
+            <div>
                 <NavBar />
                 <Switch>
-                    <Route exact path="/" element={<HomeScreen />} />
-                    <Route exact path="/about" element={<AboutScreen />} />
-                    <Route exact path="/login" element={<LoginScreen />} />
-                    <Route path="*" element={<HomeScreen />} />
+                    <Route exact path="/" component={HomeScreen } />
+                    <Route exact path="/about" component={AboutScreen } />
+                    <Route exact path="/login" component={LoginScreen } />
+                    <Redirect to="/" />
                 </Switch>
-            </Router>
-        </div>
+            </div>
+        </Router>
+
+
     )
 }
