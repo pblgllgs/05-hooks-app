@@ -16,12 +16,12 @@ describe("Pruebas sobre useFetch", () => {
         const { result, waitForNextUpdate } = renderHook(() =>
             useFetch(`https://www.breakingbadapi.com/api/quotes/1`)
         );
-        await waitForNextUpdate()
+        await waitForNextUpdate({ timeout: 1500 })
         const { data, loading, error } = result.current;
         expect(data.length).toBe(1);
         expect(loading).toBe(false);
         expect(error).toBe(null);
-    },30000);
+    });
 
     test("debe de manejar el error", async () => {
         const { result, waitForNextUpdate } = renderHook(() =>

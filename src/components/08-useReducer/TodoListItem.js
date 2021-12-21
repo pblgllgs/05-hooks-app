@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 export const TodoListItem = ({ todo, index, handleDelete, handleToggle }) => {
     return (
         <li key={todo.id} className="list-group-item">
-            <p className={`${todo.done && 'complete'}`}
+            <p
+                className={`${todo.done && 'complete'}`}
                 onClick={() => handleToggle(todo.id)}>
                 {index + 1}.{todo.desc}
             </p>
@@ -23,6 +24,6 @@ export const TodoListItem = ({ todo, index, handleDelete, handleToggle }) => {
 TodoListItem.propTypes = {
     todo: PropTypes.object.isRequired,
     index: PropTypes.number.isRequired,
-    handleDelete : PropTypes.func.isRequired,
-    handleToggle : PropTypes.func.isRequired
+    handleDelete: PropTypes.func.isRequired,
+    handleToggle: PropTypes.func.isRequired
 }
