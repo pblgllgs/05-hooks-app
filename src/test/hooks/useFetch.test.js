@@ -21,7 +21,7 @@ describe("Pruebas sobre useFetch", () => {
         expect(data.length).toBe(1);
         expect(loading).toBe(false);
         expect(error).toBe(null);
-    });
+    },30000);
 
     test("debe de manejar el error", async () => {
         const { result, waitForNextUpdate } = renderHook(() =>
