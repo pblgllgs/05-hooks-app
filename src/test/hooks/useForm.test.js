@@ -57,16 +57,12 @@ describe("Pruevas en useForm", () => {
                 }
             });
         });
-        //se captura la nueva respuesta
-        const [values] = result.current;
-        console.log(values)
         //se ejecuta la funcion reset del hook
         act(() => {
             reset();
         });
         //se captura la nueva respuesta
         const [resetValues] = result.current;
-        console.log(resetValues)
         //se espera que el state sea igual que el  initialForms
         expect(resetValues).toEqual(initialForms);
     });

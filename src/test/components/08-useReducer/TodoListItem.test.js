@@ -62,6 +62,8 @@ describe("Pruebas en <TodoListItem />", () => {
         const wrapper = shallow(
             <TodoListItem
                 todo={todo}
+                index={1}
+                handleDelete={handleDelete}
                 handleToggle={handleToggle}
             />
         );
