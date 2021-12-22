@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pruebas sobre <LoginScreen /> debe de ejecutar el setuser con el argumento esperado 1`] = `
+<div>
+  <h1>
+    LoginScreen
+  </h1>
+  <hr />
+  <button
+    className="btn btn-primary"
+    onClick={[Function]}
+  >
+    Login
+  </button>
+</div>
+`;
+
+exports[`pruebas sobre <LoginScreen /> debe mostrarse correctamente 1`] = `
+<div>
+  <h1>
+    LoginScreen
+  </h1>
+  <hr />
+  <button
+    className="btn btn-primary"
+    onClick={[Function]}
+  >
+    Login
+  </button>
+</div>
+`;
